@@ -14,21 +14,21 @@
  * @author David Chandra Purnama <david@genbumedia.com>
  * @copyright Copyright (c) 2016, Genbu Media
 **/
-
+namespace Hahahaha;
 define( 'THIS_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 
 
 add_action( 'init', function() {
 	//require_once 'includes/class-other-stuff.php';
-	new This\Includes\Other_Stuff();
-	new This\Includes\Stuff();
-	new Cool\Libs\Other_Framew();
-	new Cool\Libs\Some_Lib();
+	new \This\Includes\Other_Stuff();
+	new \This\Includes\Stuff();
+	new \Cool\Libs\Other_Framew();
+	new \Cool\Libs\Some_Lib();
 } );
 
 
 
-spl_autoload_register( 'my_autoloader' );
+spl_autoload_register( __NAMESPACE__ . '\my_autoloader' );
 function my_autoloader( $class_name ) {
 
 	/* $namespace => search folders. */
